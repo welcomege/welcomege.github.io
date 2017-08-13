@@ -26,7 +26,11 @@
       
     
     
+    
       <script src="./assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    <script src="./js/ekko-lightbox.min.js"></script>
+
     
     
       <link rel="stylesheet" href="./assets/stylesheets/application-bfecc7305d.css">
@@ -34,6 +38,8 @@
         <link rel="stylesheet" href="./assets/stylesheets/application-02c2a4388f.palette.css">
       
     
+    <link rel="stylesheet" href="./css/ekko-lightbox.min.css">
+
     
       
         
@@ -435,6 +441,7 @@
       
     </div>
     
+    
       <script src="./assets/javascripts/application-6940329b9f.js"></script>
       
       
@@ -445,6 +452,13 @@
         <script src="./javascripts/extra.js"></script>
       
     
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+
     
       
       <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
