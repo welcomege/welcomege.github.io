@@ -26,20 +26,24 @@
       
     
     
-    
       <script src="../assets/javascripts/modernizr-1df76c4e58.js"></script>
+      <script src="../assets/javascripts/jquery-1.10.2.min.js"></script>
+      <script src="../assets/javascripts/bootstrap-3.0.3.min.js"></script>
+      <script src="../assets/javascripts/highlight.pack.js"></script>
+      <script src="../assets/javascripts/ekko-lightbox.min.js"></script>
     
-    <script src="../js/ekko-lightbox.min.js"></script>
-
     
-    
+      <link href="../assets/stylesheets/bootstrap-custom.min.css" rel="stylesheet">
+      <link href="../assets/stylesheets/font-awesome-4.5.0.css" rel="stylesheet">
+      <link href="../assets/stylesheets/base.css" rel="stylesheet">
+      <link rel="stylesheet" href="../assets/stylesheets/highlight.css">
       <link rel="stylesheet" href="../assets/stylesheets/application-bfecc7305d.css">
+      <link rel="stylesheet" href="../assets/stylesheets/ekko-lightbox.min.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-02c2a4388f.palette.css">
+        <link rel="stylesheet" href="../assets/stylesheets/ekko-lightbox.min.css">
       
     
-    <link rel="stylesheet" href="../css/ekko-lightbox.min.css">
-
     
       
         
@@ -1020,7 +1024,12 @@ massa, nec semper lorem quam in massa.&#160;<a class="footnote-backref" href="#f
       
     </div>
     
-    
+      <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+     </script>
       <script src="../assets/javascripts/application-6940329b9f.js"></script>
       
       
@@ -1028,16 +1037,7 @@ massa, nec semper lorem quam in massa.&#160;<a class="footnote-backref" href="#f
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-        <script src="../javascripts/extra.js"></script>
-      
     
-    <script>
-        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-            event.preventDefault();
-            $(this).ekkoLightbox();
-        });
-    </script>
-
     
       
       <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
