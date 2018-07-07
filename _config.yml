@@ -1,42 +1,50 @@
-# Site
-name: "Welcome Ge"
-description: "Happily Building Products"
-meta_description: "Happily Building Products"
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
-baseurl: /mediumish-theme-jekyll
-google_analytics: ''
-disqus: ''
-mailchimp-list: ''
+title: My personal blog - Welcome Ge
+email: xxxxx@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+permalink: ':title/'
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Authors
-authors:
-  gary:
-    name: Gary
-    display_name: Gary
-    gravatar: b1cc14991db7a456fcd761680bbc8f81
-    email: xxxxx@gmail.com
-    web: https://welcomege.github.com
-    twitter:
-    description: "Me, me me"
+# Author settings
+author: Welcome Ge
+author-pic: adam-face.jpg
+about-author: My name is Gary. I’m a full-time product manager.
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-archives
+# Contact links
+#email: # Add your Email address
+#phone: # Add your Phone number
+website: welcomege.github.io # Add your website, do not add http://
+linkedin: # Add your Linkedin handle
+github: welcomege # Add your Github handle
+#twitter: # Add your Twitter handle
+#facebook: # Add your Facebook handle
+#instagram: # Add your Instagram handle
+#pinterest: # Add your Pinterest handle
 
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
+# Newsletter
+mailchimp: # Add your MailChimp form identifier.
 
-# Pagination
-paginate: 6
+# Disqus
+discus_identifier:  # Add your discus identifier
+
+# Tracker
+analytics: # Google Analytics
+
+# Paginate
+paginate: 10
 paginate_path: /page:num/
 
-# Other
+# Build settings
 markdown: kramdown
 highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+
+include: [_pages]
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]
