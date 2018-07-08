@@ -1298,11 +1298,11 @@ pre code {
   font-size: 12px;
   left: 2.5%;
   bottom: 10%;
-  color: #fff;
+  color: #efefef;
 }
 
 .recent-box .recent-list .recent-item:hover {
-  opacity: 0.8;
+  opacity: 0.3;
 }
 
 .newsletter {
