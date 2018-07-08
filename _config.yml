@@ -10,7 +10,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author settings
 author: Welcome Ge
-author-pic: adam-face.jpg
+author-pic: avatar.png
 about-author: My name is Gary. I’m a full-time product manager.
 
 # Contact links
@@ -40,6 +40,17 @@ paginate_path: /page:num/
 # Build settings
 markdown: kramdown
 highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 plugins:
   - jekyll-paginate
