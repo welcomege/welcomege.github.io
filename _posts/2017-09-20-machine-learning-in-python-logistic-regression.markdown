@@ -10,6 +10,8 @@ author: Gary
 # Logistic regression
 Logistic regression can be used to estimate the probability of response based on one or more variables or features. It can be used to predict categorical response with multiple levels, but the post here focuses on binary response which we can call it binary logistic models. It will only take two kinds of responses, such as fail/pass, 0 or 1.
 
+{% include toc %}
+
 Logistic regression takes the form of a logistic function with a sigmoid curve. The logistic function can be written as:
 $$P(X)={\frac{1}{1+e^{-(\beta _{0}+\beta _{1}x_{1}+ \beta _{2}x_{2}+..)}}}$$
 where P(X) is probability of response equals to 1, `P(y=1)`.
@@ -17,8 +19,6 @@ where P(X) is probability of response equals to 1, `P(y=1)`.
 The post has two parts:
 * use Sk-Learn function directly
 * coding logistic regression prediction from scratch
-
-{% include toc %}
 
 # Binary logistic regression from Scikit-learn
 ## linear_model.LogisticRegression

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Machine learning - code a neural network from scratch
-date: 2017-09-20 13:32:20 +0300
+date: 2017-10-20 13:32:20 +0300
 description: Machine learning - code a neural network from scratch
 tags: [Blog, Python, Machine Learning]
 author: Gary
@@ -10,11 +10,11 @@ author: Gary
 # Overview
 In this post, we are going to implement a neural network from scratch in Python, and use it to classify a moon dataset.
 
+{% include toc %}
+
 In the latest review paper authored by DeepMind’s co-founder, Demis Hassabis, he emphasized the importance of neuroscience as a rich source of inspiration of building deep learning and AI. “As the moniker ‘neural network’ might suggest, the origins of these AI methods lie directly in neuroscience. [Ref](http://www.cell.com/neuron/pdf/S0896-6273(17)30509-3.pdf)
 
 To mimic the neuron in brain, original data are weighted differently as inputs for different neuron node. Each neuron node receives signals from multiple inputs (just the same as dendrites in neural cell), and signals are summed and check against a certain threshold. If the accumulated signal is high enough, the neuron will fire and pass the signal to the downstream neurons. The process is: weight input values; sum signals from multiple input; activate neuron with an activation function. The first two steps can be formulated as linear combination as we learn in linear algebra and last step can use activation function such as sigmoid and rectified linear unit (ReLU).
-
-{% include toc %}
 
 ![nn1](/images/2017/nn1.png)
 
