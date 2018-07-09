@@ -3,7 +3,6 @@ layout: post
 title: Matplotlib, a Python plotting library
 date: 2017-08-20 13:32:20 +0300
 description: Matplotlib, a Python plotting library
-image: /images/2017/matplotlib.png # Add image post (optional)
 tags: [Blog, Python]
 author: Gary
 ---
@@ -35,10 +34,13 @@ plt.show()
 ```py
 import numpy as np
 import matplotlib.pyplot as plt
+
 x = np.linspace(0, 2 * np.pi, 50)
 y = np.cos(x**2)
+
 # use subplot for simple figure
 f, ax = plt.subplots(1, 1)
+
 # add plots (one is enough) using different parameters
 ax.plot(    x, y, color="blue", linewidth=4, linestyle="-",
        marker='+', label="      x, y")
@@ -46,19 +48,23 @@ ax.plot(x-0.5, y, color="red",  linewidth=2, linestyle="-.",
        marker='o', label="x-0.5, y")
 ax.plot(x-1.0, y, color="orange",  linewidth=1.5, linestyle="--",
        marker='D', label="x-0.1, y")
+
 # add a legend
 ax.legend(loc='lower left') # use upper/low right/left
+
+# set up title
+ax.set_title('Simple plot')
+
 # define x and y limit
 ax.set_xlim(x.min() - 5, x.max() * 1.2)   
 ax.set_ylim(y.min() - 0.1, y.max() + 0.1)
+
 # define tick labels
-ax.set_xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi, np.pi*2],
-          [r'−π
-            ', r'−π/2', r'0', r'+π/2', r'+π', r'+2π
-            '])
-ax.set_yticks([-1, 0, +1], ['negative', 'zero', 'positive'])
-# set up title
-ax.set_title('Simple plot')
+ax.set_xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi, np.pi*2])
+ax.set_xticklabels([r'−π', r'−π/2', r'0', r'+π/2', r'+π', r'+2π'])
+ax.set_yticks([-1, 0, +1])
+ax.set_yticklabels(['negative', 'zero', 'positive'])
+
 plt.show()   # f.show() should also work in py file
 ```
 
