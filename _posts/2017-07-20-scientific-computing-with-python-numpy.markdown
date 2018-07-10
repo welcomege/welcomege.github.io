@@ -3,12 +3,11 @@ layout: post
 title: Scientific computing with Python Numpy
 date: 2017-07-20 13:32:20 +0300
 description: Scientific computing with Python Numpy
-image: /images/2017/numpy.jpg # Add image post (optional)
 tags: [Blog, Python]
 author: Gary
 ---
 
-In the last few years, I have been working with Python and Matlab initially, but switched to R due to the workload to do large scale data analysis. During 2007-2009, I re-visited Python with Rpy and Ppy2 packages which are an interface to R running embedded in a Python process. The integration is not so smooth.
+In the last few years, I have been working with Python and Matlab initially, but switched to R due to the workload to do large scale data analysis. During 2007-2009, I re-visited Python with Rpy and Ppy2 packages which is an interface to R running embedded in a Python process. The integration is not so smooth.
 
 Nowdays, with the introduction of Numpy, Scipy, Matplotlib and Pandas, Python can almost replace the expensive Matlab software for large scale data analysis. I think it might be helpful to share my notes.
 Numpy
