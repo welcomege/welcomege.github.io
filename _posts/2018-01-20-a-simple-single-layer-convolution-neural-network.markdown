@@ -9,6 +9,8 @@ author: Gary
 
 DeepMind’s founder says to build better machine learning brain, we need to learn from neurosciences. “In both biological and artificial systems, successive non-linear computations transform raw visual input into an increasingly complex set of features, permitting object recognition that is invariant to transformations of pose, illumination, or scale.”
 
+{% include toc %}
+
 In this post, I will go over convolutional neural networks (CNNs) example using the [MNIST dataset](https://welcomege.github.io/mnist-database/). Most of CNN examples on internet are quite complex with at least two convolutional layers, like the one below:
 
 ![CNN from wiki](/images/2018/cnn1.png)
@@ -19,7 +21,7 @@ Here, I will write python script sequentially using only a single layer of convo
 
 There are mainly four steps:
 
-* Convolution: extract features from the input image using filter. Each pixel of convoluted feature image is a linear combination of multiple nearby (in 3*3, or 5*5 matrix) pixels of the original image. The linear combination matrix applied on the in 3*3, or 5*5 matrix is called filter. It is the same filter we usually called in Adobe Photoshop or Picasa, which help us sharpen or blur images. The values used for filter will be learned from training set.
+* Convolution: extract features from the input image using filter. Each pixel of convoluted feature image is a linear combination of multiple nearby (in 3 by 3, or 5 by 5 matrix) pixels of the original image. The linear combination matrix applied on the in 3 by 3, or 5 by 5 matrix is called filter. It is the same filter we usually called in Adobe Photoshop or Picasa, which help us sharpen or blur images. The values used for filter will be learned from training set.
 
 ![CNN2](/images/2018/cnn2.png)
 
@@ -53,7 +55,7 @@ x_shaped = tf.reshape(x, [-1, 28, 28, 1], name='x_shaped')
 
 The script above get the MNIST dataset and create placeholders in Tensorflow
 
-* x, which has a vector with length 784 = 28*28 for each image. It is the flattened image data that is drawn from function mnist.train.nextbatch(). I draw one batch to get examples of placeholders using peek code below.
+* x, which has a vector with length 784 = 28 x 28 for each image. It is the flattened image data that is drawn from function mnist.train.nextbatch(). I draw one batch to get examples of placeholders using peek code below.
 * Y, which is the final possible prediction outputs: 0, 1, …, 9
 * We can reshape x to have dimension `[-1, 28, 28, 1]`. The first value (-1) tells function to dynamically shape based on the amount of data passed to it. The 28*28 dimension are set for image size, and the last dimension 1 is for channel. For image with RGB, there three channels; for MINIST data with grey scale, it only has one channel.
 
@@ -129,7 +131,7 @@ out_layer_conv = tf.nn.conv2d(input=x_shaped,
 ```
 
 * Input is a 4-D tensor with dimension: [-1, 28, 28, 1], [batch, in_height, in_width, in_channels]
-* Filter has size 5*5 and we move the 5*5 window on the images to get convolutional feature map. In total, 32 filters are specified and initialized with value in weights/bias to be trained. The filter/weight dimension is [5, 5, 1, 32], [filter_height, filter_width, in_channels, out_channels], so for input image pixel values in filter window [-1, 5, 5, 1]* [5, 5, 1, 32] will have dimension [-1, 32], outputting 32 values for each input image from 32 filters.
+* Filter has size 5 x 5 and we move the 5 x 5 window on the images to get convolutional feature map. In total, 32 filters are specified and initialized with value in weights/bias to be trained. The filter/weight dimension is [5, 5, 1, 32], [filter_height, filter_width, in_channels, out_channels], so for input image pixel values in filter window [-1, 5, 5, 1]* [5, 5, 1, 32] will have dimension [-1, 32], outputting 32 values for each input image from 32 filters.
 * Strides specify the window moving steps with one step on each direction.
 * Padding specify padding choice we can use for pixels on image boundaries. Option “SAME” will pad evenly left and right and extra column is added to the right if necessary.
 * The convolutional output is dimension [-1, 28, 28, 32]
@@ -193,7 +195,7 @@ As the ouput print show,
 * x_shaped has dimension [10, 28, 28, 1] for the first batch of 10 images.
 * Filter weight dimension is [5, 5, 1, 32]
 * The output feature image is also [10, 28, 28, 1] since we slide only one on all four dimension and we padded all four boundaries.
-* The np.multiply(w_c[0:5, 0:5, 0, 0], x_c[0, 10:15, 10:15, 0]) which multiply each pixel values in [10:15, 10:15] of the first image (digit 9) with first filter weight, the value is the same as tf.nn.conv2d output on first channel output on position [12, 12] since we padded boundaries with 2 columns/rows (for filter size 5*5).
+* The np.multiply(w_c[0:5, 0:5, 0, 0], x_c[0, 10:15, 10:15, 0]) which multiply each pixel values in [10:15, 10:15] of the first image (digit 9) with first filter weight, the value is the same as tf.nn.conv2d output on first channel output on position [12, 12] since we padded boundaries with 2 columns/rows (for filter size 5 x 5).
 
 # Step 3: max pooling
 Full code with old codes greyed and new codes colored:

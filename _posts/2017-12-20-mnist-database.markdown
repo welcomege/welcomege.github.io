@@ -9,7 +9,7 @@ author: Gary
 
 MNIST database, (modified national institute of standards of technology database) is a collection of handwritten 0-9 digit images. It contains training, test and validation dataset, and is a commonly used dataset to train and validate varied image processing and machine learning algorithms.
 
-In the previous post of [logistic regression](https://welcomege.github.io/machine-learning-in-python-logistic-regression/), [neural network](https://welcomege.github.io/code-a-neural-network-from-scratch/) and [TensorFlow introduction](https://welcomege.github.io/introduction-to-tensorFlow/), I used a simple `{y, x1, x2}` dataset. Before my convolution neural network post, I will first introduce the MNIST database.
+In the previous post of [logistic regression](https://welcomege.github.io/machine-learning-in-python-logistic-regression/), [neural network](https://welcomege.github.io/code-a-neural-network-from-scratch/) and [TensorFlow introduction](https://welcomege.github.io/introduction-to-tensorFlow/), I used a simple `{y, x1, x2}` dataset. Before my [convolution neural network post](https://welcomege.github.io/a-simple-single-layer-convolution-neural-network/), I will first introduce the MNIST database.
 
 The database contains 55,000 images in training, 10,000 in test, and 5,000 in validation:
 

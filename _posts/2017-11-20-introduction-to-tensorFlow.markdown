@@ -29,7 +29,7 @@ b'Hello, TensorFlow!'
 ```
 
 # Basic operations
-The script above first defines two placeholders, a and b, with data type int16. They are placeholders without any value assigned. Then a graph is being constructed with add, multiply operations. The two operations can be run in parallel since they are not relying on each other. Another layer of add operation is added on top which will be run after two parallel operations are finished. The tf.session fires a run on the graph with data feeds for placeholder a and b.
+The script below first defines two placeholders, a and b, with data type int16. They are placeholders without any value assigned. Then a graph is being constructed with add, multiply operations. The two operations can be run in parallel since they are not relying on each other. Another layer of add operation is added on top which will be run after two parallel operations are finished. The `tf.session` fires a run on the graph with data feeds for placeholder a and b.
 
 ```py
 import sys

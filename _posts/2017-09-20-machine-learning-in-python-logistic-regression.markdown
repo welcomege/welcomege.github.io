@@ -14,7 +14,7 @@ Logistic regression can be used to estimate the probability of response based on
 
 Logistic regression takes the form of a logistic function with a sigmoid curve. The logistic function can be written as:
 $$P(X)={\frac{1}{1+e^{-(\beta _{0}+\beta _{1}x_{1}+ \beta _{2}x_{2}+..)}}}$$
-where P(X) is probability of response equals to 1, `P(y=1)`.
+where P(X) is probability of response equals to 1, $$P(y=1)$$.
 
 The post has two parts:
 * use Sk-Learn function directly
@@ -127,10 +127,10 @@ $$
 
 $$X=
 \begin{pmatrix}
-x_{1,1} x_{1,2} \cdots x_{1,p} \\
-x_{1,1} x_{1,2} \cdots x_{1,p} \\
-\vdots \vdots \ddots \vdots \\
-x_{n,1} x_{n,2} \cdots x_{n,p} \\
+x_{1,1} & x_{1,2} & \cdots & x_{1,p} \\
+x_{1,1} & x_{1,2} & \cdots & x_{1,p} \\
+\vdots & \vdots & \ddots & \vdots \\
+x_{n,1} & x_{n,2} & \cdots & x_{n,p} \\
 \end{pmatrix}
 $$
 
@@ -160,7 +160,8 @@ subset1 = np.random.multivariate_normal([0, 0], [[1, 0.6],[0.6, 1]], num_pos)
 subset2 = np.random.multivariate_normal([0.5, 4], [[1, 0.6],[0.6, 1]], num_pos)
 
 dataset = np.vstack((subset1, subset2))
-x = np.hstack((np.ones(num_pos*2).reshape(num_pos*2, 1), dataset)) # add 1 for beta_0 intercept
+# add 1 for beta_0 intercept
+x = np.hstack((np.ones(num_pos*2).reshape(num_pos*2, 1), dataset))
 y = np.hstack((np.zeros(num_pos), np.ones(num_pos))).reshape(num_pos*2, 1)
 beta = np.zeros(x.shape[1]).reshape(x.shape[1], 1)
 
@@ -181,7 +182,7 @@ print(np.shape(np.dot(x, beta)))
 ## Logistic regression function
 Logistic regression takes the form of a logistic function with a sigmoid curve. The logistic function can be written as:
 $$P(X)={\frac{1}{1+e^{-(\beta _{0}+\beta _{1}x_{1}+ \beta _{2}x_{2}+..)}}}={\frac{1}{1+e^{-X\beta}}}$$
-where P(X) is probability of response equals to 1, P(y=1|X), given features matrix X. We can call it $$\hat{Y}$$, in python code, we have
+where P(X) is probability of response equals to 1, $$P(y=1|X)$$, given features matrix X. We can call it $$\hat{Y}$$, in python code, we have
 
 ```py
 x_beta = np.dot(x, beta)
@@ -218,7 +219,7 @@ The goal of model fitting is to find parameter (weight $$\beta$$) values that ma
 
 The gradient here can use the derivative of log-likelihood function with respect to each parameter $$\beta_{j}$$, $$\frac{\partial{L}}{\partial{\beta_{j}}}$$. For the second summation, it is easy and we can get $$\frac{\partial{y_{i} x_{i}\beta}}{\partial{\beta_{j}}}=y_{i} x_{ij}$$
 
-For the first summation with P($$x_{i}$$), we first use a nice property of P(X). If we make $$z_{i}=x_{i}\beta$$, then
+For the first summation with P($$x_{i}$$), we first use a nice property of $$P(X)$$. If we make $$z_{i}=x_{i}\beta$$, then
 
 $$
 \begin{align}
@@ -230,6 +231,7 @@ $$
 
 The last equation above is a nice property we will use in the next step.
 Now, we have
+
 $$\frac{ \partial{log\bigl( 1-P(x_{i}) \bigl)} }{\partial{\beta_{j}}}=\frac{1}{1-P(x_{i})}(-1)\frac{\partial{P(x_{i})}}{\partial{\beta_{j}}}=-P(x_{i})x_{ij}$$
 
 so
@@ -242,7 +244,7 @@ $$\frac{\partial{L}}{\partial{\beta_{j}}}=\sum_{i=0}^N \bigl( y_{i}x_{ij} - P(x_
 gradient = np.dot(np.transpose(x), y - y_hat)
 ```
 
-Use the gradient to update the $$\beta$$ array with $$\delta{\beta}$$, and a small learning rate
+Use the gradient to update the $$\beta$$ array with $$\Delta{\beta}$$, and a small learning rate
 
 ```py
 beta = beta + learning_rate * gradient

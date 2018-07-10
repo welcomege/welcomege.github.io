@@ -72,32 +72,31 @@ plt.show()   # f.show() should also work in py file
 
 A list of commonly used color/marker/line code
 
-Code | color/shape
---- | ---
-r | Red
-b | Blue
-g | Green
-c | Cyan
-m | Magenta
-y | Yellow
-k | Black
-w | White
-Marker Code
-+ | Plus Sign
-. | Dot
-o | Circle
-* | Star
-p | Pentagon
-s | Square
-x | X Character
-D | Diamond
-h | Hexagon
-^ | Triangle
-Linestyle Code
-- | Solid Line
--- | Dashed Line
-: | Dotted Line
--. | Dash-Dotted Line
+| Code code |
+| r | Red |
+| b | Blue |
+| g | Green |
+| c | Cyan |
+| m | Magenta |
+| y | Yellow |
+| k | Black |
+| w | White |
+| Marker Code |
+| + | Plus Sign |
+| . | Dot |
+| o | Circle |
+| * | Star |
+| p | Pentagon |
+| s | Square |
+| x | X Character |
+| D | Diamond |
+| h | Hexagon |
+| ^ | Triangle |
+| Linestyle Code |
+| - | Solid Line |
+| -- | Dashed Line |
+| : | Dotted Line |
+| -. | Dash-Dotted Line |
 
 # A simple plot sharing x and y axis
 ```py
