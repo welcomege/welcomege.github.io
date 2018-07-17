@@ -16,7 +16,7 @@ google_fonts:
     weights: "400,400i,700,700i"
 google_analytics: # Google Analytics id, e.g. "UA-NNNNNNNN-N"
 disqus:
-  shortname: # Disqus shortname, e.g. "my_disqus_shortname"
+  shortname: welcomege
 twitter:
   username: # site's Twitter username, e.g. "mmistakes"
 
@@ -79,4 +79,9 @@ Gary:
 footer_links:
   - title: Feed
     url: atom.xml
-icon: fas fa-rss-square
+    icon: fas fa-rss-square
+  - title: GitHub
+    url: https://github.com/welcomege
+    icon: fab fa-github-square
+
+copyright: "Welcomege 2018"
