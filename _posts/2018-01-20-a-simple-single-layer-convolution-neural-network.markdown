@@ -17,7 +17,7 @@ In this post, I will go over convolutional neural networks (CNNs) example using 
 *From Wikipedia*
 
 # Overview
-Here, I will write python script sequentially using only a single layer of convolution, step by step with a piece of code to peek the Tensorflow graph and intermediate results.
+I will write python script sequentially using only a single layer of convolution, step by step with a piece of code to peek the Tensorflow graph and intermediate results.
 
 There are mainly four steps:
 
